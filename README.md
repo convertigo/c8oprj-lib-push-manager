@@ -1,5 +1,5 @@
 # c8oprj-lib-push-manager
-This is the Firebase Cloud Messing Push notifcations library for Convertigo platform.
+This is the Firebase Cloud Messaging (FCM) Push notifcations library for Convertigo platform.
 
 # Usage
 This library brings the server part and the client part for Firebase Push Notifications support for Convertigo mobile builder apps. 
@@ -45,6 +45,25 @@ The library provides a __FCMPushNotifications__ Convertigo Shared action you mus
 	  
 	The library will be downloaded from github and installed in your Convertigo workspace.
 4. Now invoke the shared action in your client app to register and start receiving push notifications.
+
+You will also have to include the __google-service.json__ and __GoogleService-info.plist__ files you downloaded in the previous steps to your app to link it to google FCM services :
+
+1. Copy the __google-service.json__ and __GoogleService-info.plist__ files in your projects __DisplayObjects/mobile/assets__ directory.
+2. Edit the __DisplayObjects/platforms/Android/config.xml__ file and add the 
+
+    	<resource-file src="assets/google-services.json" target="app/google-services.json" />
+
+	in the ```<platform>``` section. 
+
+
+4. Edit the __DisplayObjects/platforms/iOS/config.xml__ file and add the 
+
+    	<resource-file src="assets/GoogleService-info.plist" target="app/GoogleService-info.plist" />
+
+	in the ```<platform>``` section. 
+
+The last step is to configure in your [MobileApplication](https://www.convertigo.com/documentation/latest/reference-manual/convertigo-objects/mobile-application/mobile-application/) the correct __Application ID__ for your app. This must be exactly the ID you configured inb the google FCM Console in step #6  
+
 
 ## Client part usage
 
