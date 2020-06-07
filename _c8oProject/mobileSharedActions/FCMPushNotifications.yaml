@@ -1,0 +1,107 @@
+↓InstallAndRegsiter [mobile.components.UICustomAction-1591517891682]: 
+  actionValue: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+        →: |
+          '		    if (window["cordova"]) {
+                  		let fcm = page.getInstance(FCM)
+                  		let evts = page.getInstance(Events)
+                  		fcm.subscribeToTopic("convertigo")
+                  		fcm.onNotification().subscribe(data => {
+                            if(data.wasTapped){
+                                page.c8o.log.debug("FCM: Received in background");
+                                evts.publish("FCM", {
+                                    type: "data",
+                                    data: data
+                                });
+                            } else {
+                                page.c8o.log.debug("FCM: Received in foreground");
+                                evts.publish("FCM", {
+                                    type: "data",
+                                    data: data
+                                });
+                            };
+                          });
+                  		
+                  		//Note that this callback will be fired everytime a new token is generated, including the first time.
+                  		fcm.onTokenRefresh().subscribe(token => {
+                  		    page.c8o.log.debug("FCM token Refresh : " + token );
+                              evts.publish("FCM", {
+                                  type: "token",
+                                  data: token
+                              });
+                  		})
+                  		
+                          fcm.getToken().then(token => {
+                              page.c8o.log.debug("FCM get token : " + token );
+                              evts.publish("FCM", {
+                                  type: "token",
+                                  data: token
+                              });
+                          })
+          		    }
+          		    resolve();
+          '
+  cordova_plugins: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: cordova-plugin-fcm-with-dependecy-updated
+            - java.lang.String: 
+              - ↑value: 6.4.1
+            - java.lang.String: 
+              - ↑value: '{}'
+  module_ng_providers: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: FCM
+  module_ts_imports: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: FCM
+            - java.lang.String: 
+              - ↑value: '@ionic-native/fcm'
+  package_dependencies: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: '@ionic-native/fcm'
+            - java.lang.String: 
+              - ↑value: 4.0.0
+  page_ts_imports: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: FCM
+            - java.lang.String: 
+              - ↑value: '@ionic-native/fcm'
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: Events
+            - java.lang.String: 
+              - ↑value: ionic-angular
