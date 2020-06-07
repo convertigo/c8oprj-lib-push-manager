@@ -1,3 +1,15 @@
+comment: |
+  'Installs and registers FCM Push notification services. Will generate "FCM" events that can be received by the "Event subscribe handler"
+  
+  The topic data will be a 
+  
+  {
+  	type: "token" or "data",
+  	data: the notification data or the token
+  }
+  
+  
+  '
 ↓InstallAndRegsiter [mobile.components.UICustomAction-1591517891682]: 
   actionValue: 
     - xmlizable: 
@@ -7,7 +19,14 @@
           '		    if (window["cordova"]) {
                   		let fcm = page.getInstance(FCM)
                   		let evts = page.getInstance(Events)
-                  		fcm.subscribeToTopic("convertigo")
+                  		
+                  		for (let topic of vars.topics) {
+                  		    if (topic != '''') {
+                  		        fcm.subscribeToTopic(topic)
+                                  page.c8o.log.debug("FCM: Subscribed to : " + topic);
+                  		    }
+                  		}
+                  		
                   		fcm.onNotification().subscribe(data => {
                             if(data.wasTapped){
                                 page.c8o.log.debug("FCM: Received in background");
@@ -24,7 +43,7 @@
                             };
                           });
                   		
-                  		//Note that this callback will be fired everytime a new token is generated, including the first time.
+                  		//Note that this callback will be fired every time a new token is generated, including the first time.
                   		fcm.onTokenRefresh().subscribe(token => {
                   		    page.c8o.log.debug("FCM token Refresh : " + token );
                               evts.publish("FCM", {
@@ -105,3 +124,11 @@
               - ↑value: Events
             - java.lang.String: 
               - ↑value: ionic-angular
+  ↓topics [mobile.components.UIControlVariable-1591522023523]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params.Topics
+↓Topics [mobile.components.UIStackVariable-1591521924649]: 
+  comment: Array of topics this app can be notified on
+  value: '['''']'
