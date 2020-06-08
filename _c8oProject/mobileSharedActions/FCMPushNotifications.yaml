@@ -10,7 +10,7 @@ comment: |
   
   
   '
-↓InstallAndRegsiter [mobile.components.UICustomAction-1591517891682]: 
+↓InstallAndRegister [mobile.components.UICustomAction-1591517891682]: 
   actionValue: 
     - xmlizable: 
       - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent

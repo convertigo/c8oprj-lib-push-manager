@@ -5,3 +5,9 @@ title: Title for Page
   ↓InvokeSharedAction [mobile.components.UIDynamicInvoke-1591517959608]: 
     beanData: '{"ionBean":"InvokeAction"}'
     stack: lib_PushManager.MobileApplication.Application.FCMPushNotifications
+    ↓Topics [mobile.components.UIControlVariable-1591618689455]: 
+      comment: Array of topics this app can be notified on
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:['convertigo']
