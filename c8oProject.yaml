@@ -4,7 +4,6 @@
   version: 7.8.1-beta
   ↓FCMConnector [connectors.HttpConnector]: 🗏 connectors/FCMConnector.yaml
   ↓PushManagerDataBase [connectors.SqlConnector]: 🗏 connectors/PushManagerDataBase.yaml
-  ↓RegisterDevice [sequences.GenericSequence]: 🗏 sequences/RegisterDevice.yaml
   ↓SendNotifications [sequences.GenericSequence]: 🗏 sequences/SendNotifications.yaml
   ↓MobileApplication [core.MobileApplication]: 
     ↓Application [mobile.components.ApplicationComponent]: 🗏 mobileApplication.yaml

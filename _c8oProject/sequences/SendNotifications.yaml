@@ -1,50 +1,90 @@
 accessibility: Hidden
 ↓Input_variables [steps.InputVariablesStep-1370878737995]: 
-↓Element [steps.XMLElementStep-1371037904006]: 
-  nodeName: OtherData
-  nodeText: This is some other value
-↓Complex [steps.XMLComplexStep-1370879006965]: 
-  nodeName: deviceIds
-  ↓Call_Transaction [steps.TransactionStep-1382365443306]: 
-    sourceTransaction: lib_PushManager.PushManagerDataBase.ShowDevices
-  ↓Iterator [steps.IteratorStep-1382365462423]: 
+↓Concat [steps.XMLConcatStep-1591541644346]: 
+  nodeName: auth
+  separator: =
+  sourcesDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: description
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: key
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: description
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1370878737995
+                - java.lang.String: 
+                  - ↑value: ./serverKey/text()
+            - java.lang.String: 
+              - ↑value: ''
+↓BuildMessage [steps.SimpleStep-1591594479278]: 
+  expression: |
+    'message = {
+    	to: "/topics/" + to,
+    	notification: {
+    		title: title,
+    		sound: sound,
+    		icon: icon,
+    		body: payload
+    	}
+    }
+    '
+↓jElement [steps.ElementStep-1591594929691]: 
+  expression: JSON.stringify(message)
+  nodeName: jMessage
+↓Call_Transaction [steps.TransactionStep-1591541625752]: 
+  sourceTransaction: lib_PushManager.FCMConnector.SendPushNotif
+  ↓__body [variables.StepVariable-1591541625754]: 
     sourceDefinition: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
         - com.twinsoft.convertigo.beans.common.XMLVector: 
           - java.lang.String: 
-            - ↑value: 1382365443306
+            - ↑value: 1591594929691
           - java.lang.String: 
-            - ↑value: ./document/sql_output/row
-    ↓Element1 [steps.XMLElementStep-1382365523891]: 
-      nodeName: deviceId
-      sourceDefinition: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-          - com.twinsoft.convertigo.beans.common.XMLVector: 
-            - java.lang.String: 
-              - ↑value: 1382365462423
-            - java.lang.String: 
-              - ↑value: ./@device_token
-↓PushToDevices [steps.PushNotificationStep-1370878652542]: 
-  GCMApiKey: '"AIzaSyCDXaS4lRkPKhBDeN6eDnH9vPRbObsMl5g"'
-  certificatePassword: x334de1513e0ce43659f0250a88f75b7f
-  clientCertificate: '".//AppleCertificateTool/pushdemo.p12"'
-  sourceDefinition: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-      - com.twinsoft.convertigo.beans.common.XMLVector: 
-        - java.lang.String: 
-          - ↑value: 1370878737995
-        - java.lang.String: 
-          - ↑value: ./payload/text()
-  token: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-      - com.twinsoft.convertigo.beans.common.XMLVector: 
-        - java.lang.String: 
-          - ↑value: 1370879006965
-        - java.lang.String: 
-          - ↑value: ./deviceId/text()
+            - ↑value: ./text()
+  ↓__header_Authorization [variables.StepVariable-1591541625756]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1591541644346
+          - java.lang.String: 
+            - ↑value: ./text()
+↓serverKey [variables.RequestableVariable-1591541686769]: 
+  description: The server key from FCM console
+  value: ${lib_PushManager.serverKey}
 ↓payload [variables.RequestableVariable-1370449012789]: 
-  value: HelloWorld  xxx !!!
+↓topic [variables.RequestableVariable-1591542106992]: 
+↓title [variables.RequestableVariable-1591552696598]: 
+↓sound [variables.RequestableVariable-1591552747354]: 
+  value: default
+↓icon [variables.RequestableVariable-1591552748604]: 
+↓OK [core.TestCase]: 
+  ↓payload [variables.TestCaseVariable-1591542429319]: 
+    value: HelloWorld  xxx !!!
+  ↓topic [variables.TestCaseVariable-1591542429323]: 
+    value: convertigo
+  ↓serverKey [variables.TestCaseVariable-1591552957201]: 
+    description: The server key from FCM console
+    value: AAAAJIxGFB4:APA91bFSeDDfHOa7JxZ5vR2bWQk0dzXwPeHPYB5f8E6XAVXowfUtIj0nsOvQx-aB5ksyzL6sCumkcRs1T8Ww9iMjpFm2A6WxCAYHBVV9a5IsOuLmzahRjRUKlx6NbRi5_h1aJmdCmuU_
+  ↓title [variables.TestCaseVariable-1591552957203]: 
+    value: Title for Hello
+  ↓sound [variables.TestCaseVariable-1591552957205]: 
+    value: default
+  ↓icon [variables.TestCaseVariable-1591552957207]: 
