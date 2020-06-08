@@ -34,7 +34,7 @@ accessibility: Hidden
 ↓BuildMessage [steps.SimpleStep-1591594479278]: 
   expression: |
     'message = {
-    	to: "/topics/" + to,
+    	to: "/topics/" + topic,
     	notification: {
     		title: title,
     		sound: sound,
