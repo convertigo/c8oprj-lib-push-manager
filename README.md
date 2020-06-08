@@ -1,8 +1,5 @@
 # c8oprj-lib-push-manager
-This is the Firebase Cloud Messaging (FCM) Push notifcations library for Convertigo platform.
-
-# Usage
-This library brings the server part and the client part for Firebase Push Notifications support for Convertigo mobile builder apps. 
+This is the Firebase Cloud Messaging (FCM) Push notifcations library for the Convertigo Low Code Platform. This library brings the server part and the client part for Firebase Push Notifications support for Convertigo mobile builder apps. 
 
 ## Setting up the Firebase Service
 
@@ -67,7 +64,7 @@ The last step is to configure in your [MobileApplication](https://www.convertigo
 
 ## Client part usage
 
-the __FCMPushNotifications__ shared action has a __Topics__ shared variable you can use register FCM notifications on a list of topics. By default, the topic list is empty but you can use there an array of FCM topics you want to be notified on.
+the __FCMPushNotifications__ shared action has a __Topics__ shared variable you can use to register FCM notifications on a list of topics. By default, the topic list is empty but you can use there an array of FCM topics you want to be notified on.
 
 You can receive FCM events by using a [Subscribe Handler](https://www.convertigo.com/documentation/latest/reference-manual/convertigo-objects/mobile-application/components/control-components/subscribe-handler/) on the "FCM" vent topic property. You will receive FCM events with this data structure :
 
