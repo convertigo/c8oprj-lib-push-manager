@@ -66,7 +66,7 @@ The last step is to configure in your [MobileApplication](https://www.convertigo
 
 the __FCMPushNotifications__ shared action has a __Topics__ shared variable you can use to register FCM notifications on a list of topics. By default, the topic list is empty but you can use there an array of FCM topics you want to be notified on.
 
-You can receive FCM events by using a [Subscribe Handler](https://www.convertigo.com/documentation/latest/reference-manual/convertigo-objects/mobile-application/components/control-components/subscribe-handler/) on the "FCM" vent topic property. You will receive FCM events with this data structure :
+You can receive FCM events by using a [Subscribe Handler](https://www.convertigo.com/documentation/latest/reference-manual/convertigo-objects/mobile-application/components/control-components/subscribe-handler/) on the "FCM" event topic property. You will receive FCM events with this data structure :
 
 		{
 			type: "data" or "token" (If token the data field is the token),
