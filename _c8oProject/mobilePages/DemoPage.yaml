@@ -4,4 +4,4 @@ title: Title for Page
 ↓PageEvent [mobile.components.UIPageEvent-1591517938559]: 
   ↓InvokeSharedAction [mobile.components.UIDynamicInvoke-1591517959608]: 
     beanData: '{"ionBean":"InvokeAction"}'
-    stack: TestPushNotifications.MobileApplication.Application.FCMPushNotifications
+    stack: lib_PushManager.MobileApplication.Application.FCMPushNotifications
