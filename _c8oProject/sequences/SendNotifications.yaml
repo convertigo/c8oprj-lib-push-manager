@@ -80,9 +80,6 @@ accessibility: Hidden
     value: HelloWorld  xxx !!!
   ↓topic [variables.TestCaseVariable-1591542429323]: 
     value: convertigo
-  ↓serverKey [variables.TestCaseVariable-1591552957201]: 
-    description: The server key from FCM console
-    value: AAAAJIxGFB4:APA91bFSeDDfHOa7JxZ5vR2bWQk0dzXwPeHPYB5f8E6XAVXowfUtIj0nsOvQx-aB5ksyzL6sCumkcRs1T8Ww9iMjpFm2A6WxCAYHBVV9a5IsOuLmzahRjRUKlx6NbRi5_h1aJmdCmuU_
   ↓title [variables.TestCaseVariable-1591552957203]: 
     value: Title for Hello
   ↓sound [variables.TestCaseVariable-1591552957205]: 
