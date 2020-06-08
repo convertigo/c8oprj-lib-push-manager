@@ -59,6 +59,17 @@ You will also have to include the __google-service.json__ and __GoogleService-in
 
 	in the ```<platform>``` section. 
 
+The FCM Push notification Cordova plugin requires Cordova cli-9.0.0 version so you must update this in your __config.xml__:
+
+
+1.  Edit the __DisplayObjects/platforms/Android/config.xml__ file and modify the phonegap cli version to 9.0.0:
+
+	    <preference name="phonegap-version" value="cli-9.0.0" />      <!-- all: current version of PhoneGap CLI -->
+
+2.  Edit the __DisplayObjects/platforms/iOS/config.xml__ file and modify the phonegap cli version to 9.0.0:
+
+	    <preference name="phonegap-version" value="cli-9.0.0" />      <!-- all: current version of PhoneGap CLI -->
+
 The last step is to configure in your [MobileApplication](https://www.convertigo.com/documentation/latest/reference-manual/convertigo-objects/mobile-application/mobile-application/) the correct __Application ID__ for your app. This must be exactly the ID you configured inb the google FCM Console in step #6  
 
 
