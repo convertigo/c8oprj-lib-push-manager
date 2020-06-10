@@ -40,6 +40,12 @@ accessibility: Hidden
     		title: title,
     		sound: sound,
     		icon: icon,
+    		body: payload,
+    		click_action: "FCM_PLUGIN_ACTIVITY"
+    	},
+    	
+    	data: {
+    		title: title,
     		body: payload
     	}
     }
