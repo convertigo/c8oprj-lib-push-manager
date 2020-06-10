@@ -45,6 +45,7 @@ accessibility: Hidden
     	},
     	
     	data: {
+    		topic: topic,
     		title: title,
     		body: payload
     	}
