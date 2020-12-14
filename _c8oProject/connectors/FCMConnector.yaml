@@ -14,7 +14,6 @@ server: fcm.googleapis.com
               - ↑value: Content-Type
             - java.lang.String: 
               - ↑value: application/json
-  httpPool: no
   httpVerb: POST
   subDir: fcm/send
   ↓__body [variables.RequestableHttpVariable-1591371781234]: 
