@@ -5,5 +5,3 @@
   ↓FCMConnector [connectors.HttpConnector]: 🗏 connectors/FCMConnector.yaml
   ↓PushManagerDataBase [connectors.SqlConnector]: 🗏 connectors/PushManagerDataBase.yaml
   ↓SendNotifications [sequences.GenericSequence]: 🗏 sequences/SendNotifications.yaml
-  ↓MobileApplication [core.MobileApplication]: 
-    ↓Application [mobile.components.ApplicationComponent]: 🗏 mobileApplication.yaml
